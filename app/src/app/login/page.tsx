@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { Chyba, Pole, btn, vstup } from "@/components/ui";
+import { AuthRecoveryHandler } from "@/components/auth-recovery-handler";
 
 export default async function Login({ searchParams }: { searchParams: Promise<{ chyba?: string; dal?: string }> }) {
   const sp = await searchParams;
@@ -19,6 +20,7 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
 
   return (
     <main className="flex min-h-screen items-center justify-center px-4">
+      <AuthRecoveryHandler />
       <div className="w-full max-w-sm">
         <div className="mb-8 text-center">
           <p className="font-display text-[22px] font-medium tracking-[0.14em] text-ink">PARŤÁK</p>
