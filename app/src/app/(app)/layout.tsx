@@ -9,15 +9,22 @@ const NAV = [
     polozky: [
       { href: "/", label: "Dnes" },
       { href: "/rizika", label: "Rizika" },
+      { href: "/ukoly", label: "Úkoly" },
     ],
   },
   {
     sekce: "Obchod",
-    polozky: [{ href: "/klienti", label: "Klienti" }],
+    polozky: [
+      { href: "/obchod", label: "Pipeline" },
+      { href: "/klienti", label: "Klienti" },
+    ],
   },
   {
     sekce: "Realizace",
-    polozky: [{ href: "/projekty", label: "Projekty" }],
+    polozky: [
+      { href: "/projekty", label: "Projekty" },
+      { href: "/partneri", label: "Partneři" },
+    ],
   },
 ];
 
@@ -100,9 +107,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <div className="flex min-w-0 flex-1 flex-col">
         <div className="flex gap-3 border-b border-line bg-white px-4 py-2 md:hidden">
           <Link href="/" className="text-[13px]">Dnes</Link>
+          <Link href="/rizika" className="text-[13px]">Rizika</Link>
+          <Link href="/ukoly" className="text-[13px]">Úkoly</Link>
+          <Link href="/obchod" className="text-[13px]">Pipeline</Link>
           <Link href="/projekty" className="text-[13px]">Projekty</Link>
           <Link href="/klienti" className="text-[13px]">Klienti</Link>
-          <Link href="/rizika" className="text-[13px]">Rizika</Link>
         </div>
         <main className="mx-auto w-full max-w-[1180px] flex-1 p-4 md:p-7">{children}</main>
       </div>
